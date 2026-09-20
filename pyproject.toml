@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["agent*"]
+
+[project]
+name = "download-security-agent"
+version = "0.1.0"
+description = "Browser & Download Risk Intelligence Platform — Python Agent"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.5,<3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4,<9",
+    "ruff>=0.3,<1",
+]
+
+[project.scripts]
+agent = "agent.main:main"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+src = ["agent", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "A", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

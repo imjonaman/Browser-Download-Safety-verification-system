@@ -1,0 +1,9 @@
+{
+  "name": "com.downloadsecurity.agent",
+  "description": "Local Download Security Agent — native messaging host",
+  "path": "C:\\YOUR\\PROJECT\\PATH\\agent\\native_messaging\\host.exe",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://YOUR_EXTENSION_ID/"
+  ]
+}
